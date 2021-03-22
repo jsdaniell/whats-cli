@@ -1,0 +1,26 @@
+{
+  "name": "whats-cli",
+  "version": "1.0.0",
+  "description": "Description of your project",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "go-npm install",
+    "preuninstall": "go-npm uninstall"
+  },
+  "goBinary": {
+    "name": "whats-cli",
+    "path": "./bin",
+    "url": "https://github.com/jsdaniell/whats-cli/releases/download/v{{version}}/recipe-cli_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  },
+  "author": "jsdaniell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsdaniell/whats-cli/issues"
+  },
+  "homepage": "https://github.com/jsdaniell/whats-cli#readme",
+  "dependencies": {
+    "go-npm": "^0.1.9",
+    "recipe-cli": "latest"
+  }
+}
+
