@@ -16,13 +16,14 @@ var WhatsConnect = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// run your different command
 		//create new WhatsApp connection
+
 		wac, err := whatsapp.NewConn(5 * time.Second)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
 
 		}
 
-		err = whats_utils.Login(wac)
+		err = whats_utils.Login(wac, true)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
 

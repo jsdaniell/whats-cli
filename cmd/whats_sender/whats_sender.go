@@ -23,7 +23,7 @@ var WhatsSendMessage = &cobra.Command{
 			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
 		}
 
-		err = whats_utils.Login(wac)
+		err = whats_utils.Login(wac, true)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
 		}

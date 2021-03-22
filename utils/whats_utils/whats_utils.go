@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func Login(wac *whatsapp.Conn) error {
+func Login(wac *whatsapp.Conn, qrStr bool) error {
 	//load saved session
 	session, err := readSession()
 	if err == nil {
@@ -21,9 +21,19 @@ func Login(wac *whatsapp.Conn) error {
 		//no saved session -> regular login
 		qr := make(chan string)
 		go func() {
-			terminal := qrcodeTerminal.New()
-			terminal.Get(<-qr).Print()
+			if !qrStr {
+				terminal := qrcodeTerminal.New()
+				terminal.Get(<-qr).Print()
+			} else {
+				qrString := <- qr
+				fmt.Println(qrString)
+			}
+
+
 		}()
+
+
+
 		session, err = wac.Login(qr)
 		if err != nil {
 		fmt.Errorf("error during login: %v\n", err)
