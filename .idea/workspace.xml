@@ -47,10 +47,11 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="987" y="-767" width="586" height="476" key="find.popup" timestamp="1616381562673">
-      <screen x="0" y="-1057" width="2560" height="1057" />
+    <state x="494" y="236" width="556" height="476" key="find.popup" timestamp="1616444091010">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="987" y="-767" width="586" height="476" key="find.popup/0.-1057.2560.1057/0.23.1280.777@0.-1057.2560.1057" timestamp="1616381562673" />
+    <state x="494" y="236" width="556" height="476" key="find.popup/0.-1057.2560.1057/0.23.1280.777@0.23.1280.777" timestamp="1616444091010" />
     <state x="945" y="-822" width="670" height="676" key="search.everywhere.popup" timestamp="1616380991438">
       <screen x="0" y="-1057" width="2560" height="1057" />
     </state>

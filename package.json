@@ -1,6 +1,6 @@
 {
   "name": "whats-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Description of your project",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "goBinary": {
     "name": "whats-cli",
     "path": "./bin",
-    "url": "https://github.com/jsdaniell/whats-cli/releases/download/v{{version}}/recipe-cli_{{version}}_{{platform}}_{{arch}}.tar.gz"
+    "url": "https://github.com/jsdaniell/whats-cli/releases/download/v{{version}}/whats-cli_{{version}}_{{platform}}_{{arch}}.tar.gz"
   },
   "author": "jsdaniell",
   "license": "ISC",
