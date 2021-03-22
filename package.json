@@ -1,6 +1,6 @@
 {
   "name": "whats-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Description of your project",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/jsdaniell/whats-cli#readme",
   "dependencies": {
     "go-npm": "^0.1.9",
-    "recipe-cli": "latest"
+    "whats-cli": "latest"
   }
 }
 
