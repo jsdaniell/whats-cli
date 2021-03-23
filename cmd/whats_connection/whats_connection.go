@@ -63,7 +63,7 @@ var WhatsVersion = &cobra.Command{
 	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
 	Run: func(cmd *cobra.Command, args []string) {
 
-		fmt.Println("1.1.1")
+		fmt.Println("1.1.4")
 	},
 }
 
