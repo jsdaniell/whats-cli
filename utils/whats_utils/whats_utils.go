@@ -28,8 +28,6 @@ func Login(wac *whatsapp.Conn, qrStr bool) error {
 				qrString := <- qr
 				fmt.Println(qrString)
 			}
-
-
 		}()
 
 

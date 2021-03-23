@@ -15,9 +15,9 @@ var WhatsConnect = &cobra.Command{
 	Short: "Connect or restore connection to whatsapp on CLI",
 	Run: func(cmd *cobra.Command, args []string) {
 		// run your different command
-		//create new WhatsApp connection
+		// create new WhatsApp connection
 
-		wac, err := whatsapp.NewConn(5 * time.Second)
+		wac, err := whatsapp.NewConn(20 * time.Second)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
 
