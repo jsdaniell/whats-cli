@@ -32,3 +32,27 @@ var WhatsConnect = &cobra.Command{
 		<-time.After(3 * time.Second)
 	},
 }
+
+// WhatsConnectQR handles other command, customize it!.
+var WhatsConnectQR = &cobra.Command{
+	Use:   "connect-qr",
+	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
+	Run: func(cmd *cobra.Command, args []string) {
+		// run your different command
+		// create new WhatsApp connection
+
+		wac, err := whatsapp.NewConn(20 * time.Second)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
+
+		}
+
+		err = whats_utils.Login(wac, false)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
+
+		}
+
+		<-time.After(3 * time.Second)
+	},
+}

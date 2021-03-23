@@ -45,6 +45,7 @@ func init() {
 	RootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 
 	RootCmd.AddCommand(whats_connection.WhatsConnect)
+	RootCmd.AddCommand(whats_connection.WhatsConnectQR)
 
 	RootCmd.AddCommand(whats_sender.WhatsSendMessage)
 }
