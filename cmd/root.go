@@ -46,6 +46,8 @@ func init() {
 
 	RootCmd.AddCommand(whats_connection.WhatsConnect)
 	RootCmd.AddCommand(whats_connection.WhatsConnectQR)
+	RootCmd.AddCommand(whats_connection.WhatsReconnect)
+	RootCmd.AddCommand(whats_connection.WhatsVersion)
 
 	RootCmd.AddCommand(whats_sender.WhatsSendMessage)
 }
