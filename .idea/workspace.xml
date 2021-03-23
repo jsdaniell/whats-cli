@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c7689dde-3e57-43b2-a8ac-51c4566028a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/whats_connection/whats_connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/whats_connection/whats_connection.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/whats_utils/whats_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/whats_utils/whats_utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/whats_sender/whats_sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/whats_sender/whats_sender.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,10 +85,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="494" y="236" width="556" height="476" key="find.popup" timestamp="1616460374971">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="987" y="-767" width="586" height="476" key="find.popup" timestamp="1616527914326">
+      <screen x="0" y="-1057" width="2560" height="1057" />
     </state>
-    <state x="987" y="-767" width="586" height="476" key="find.popup/0.-1057.2560.1057/0.23.1280.777@0.-1057.2560.1057" timestamp="1616381562673" />
+    <state x="987" y="-767" width="586" height="476" key="find.popup/0.-1057.2560.1057/0.23.1280.777@0.-1057.2560.1057" timestamp="1616527914326" />
     <state x="494" y="236" width="556" height="476" key="find.popup/0.-1057.2560.1057/0.23.1280.777@0.23.1280.777" timestamp="1616444091010" />
     <state x="494" y="236" width="556" height="476" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1616460374971" />
     <state x="945" y="-822" width="670" height="676" key="search.everywhere.popup" timestamp="1616380991438">

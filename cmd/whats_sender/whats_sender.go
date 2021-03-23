@@ -34,7 +34,7 @@ var WhatsSendMessage = &cobra.Command{
 
 		msg := whatsapp.TextMessage{
 			Info: whatsapp.MessageInfo{
-				RemoteJid: "55" + args[0] + "@s.whatsapp.net",
+				RemoteJid: args[0] + "@s.whatsapp.net",
 			},
 			ContextInfo: whatsapp.ContextInfo{},
 			Text:        args[1],
