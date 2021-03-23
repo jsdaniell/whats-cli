@@ -74,6 +74,14 @@ func ReLogin(wac *whatsapp.Conn, qrStr bool) error {
 	}
 	return nil
 }
+func Disconnect() error {
+	err := os.Remove(os.TempDir() + "/whatsappSession.gob")
+	if err != nil {
+		fmt.Errorf("error saving session: %v\n", err)
+	}
+
+	return nil
+}
 
 func readSession() (whatsapp.Session, error) {
 	session := whatsapp.Session{}

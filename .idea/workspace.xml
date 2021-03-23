@@ -23,9 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/whats_connection/whats_connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/whats_connection/whats_connection.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/whats_utils/whats_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/whats_utils/whats_utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whatsappSession.gob" beforeDir="false" afterPath="$PROJECT_DIR$/whatsappSession.gob" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

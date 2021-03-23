@@ -91,3 +91,16 @@ var WhatsReconnect = &cobra.Command{
 		<-time.After(3 * time.Second)
 	},
 }
+
+// WhatsDisconnect handles other command, customize it!.
+var WhatsDisconnect = &cobra.Command{
+	Use:   "disconnect",
+	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
+	Run: func(cmd *cobra.Command, args []string) {
+		err := whats_utils.Disconnect()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
+
+		}
+	},
+}
