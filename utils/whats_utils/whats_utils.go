@@ -8,14 +8,14 @@ import (
 	"os"
 )
 
-func Login(wac *whatsapp.Conn, qrStr bool) error {
+func Login(wac *whatsapp.Conn, qrStr bool, sessionID string) error {
 	//load saved session
-	session, err := readSession()
+	session, err := readSession(sessionID)
 	if err == nil {
 		//restore session
 		session, err = wac.RestoreWithSession(session)
 		if err != nil {
-		fmt.Errorf("restoring failed: %v\n", err)
+			fmt.Errorf("restoring failed: %v\n", err)
 		}
 	} else {
 		//no saved session -> regular login
@@ -25,34 +25,32 @@ func Login(wac *whatsapp.Conn, qrStr bool) error {
 				terminal := qrcodeTerminal.New()
 				terminal.Get(<-qr).Print()
 			} else {
-				qrString := <- qr
+				qrString := <-qr
 				fmt.Println(qrString)
 			}
 		}()
 
-
-
 		session, err = wac.Login(qr)
 		if err != nil {
-		fmt.Errorf("error during login: %v\n", err)
+			fmt.Errorf("error during login: %v\n", err)
 		}
 	}
 
 	//save session
-	err = writeSession(session)
+	err = writeSession(session, sessionID)
 	if err != nil {
-	fmt.Errorf("error saving session: %v\n", err)
+		fmt.Errorf("error saving session: %v\n", err)
 	}
 	return nil
 }
-func ReLogin(wac *whatsapp.Conn, qrStr bool) error {
+func ReLogin(wac *whatsapp.Conn, qrStr bool, sessionID string) error {
 	qr := make(chan string)
 	go func() {
 		if !qrStr {
 			terminal := qrcodeTerminal.New()
 			terminal.Get(<-qr).Print()
 		} else {
-			qrString := <- qr
+			qrString := <-qr
 			fmt.Println(qrString)
 		}
 	}()
@@ -68,9 +66,9 @@ func ReLogin(wac *whatsapp.Conn, qrStr bool) error {
 	}
 
 	//save session
-	err = writeSession(session)
+	err = writeSession(session, sessionID)
 	if err != nil {
-	fmt.Errorf("error saving session: %v\n", err)
+		fmt.Errorf("error saving session: %v\n", err)
 	}
 	return nil
 }
@@ -83,9 +81,9 @@ func Disconnect() error {
 	return nil
 }
 
-func readSession() (whatsapp.Session, error) {
+func readSession(sessionID string) (whatsapp.Session, error) {
 	session := whatsapp.Session{}
-	file, err := os.Open(os.TempDir() + "/whatsappSession.gob")
+	file, err := os.Open(os.TempDir() + "/whatsappSession" + sessionID + ".gob")
 	if err != nil {
 		return session, err
 	}
@@ -98,8 +96,8 @@ func readSession() (whatsapp.Session, error) {
 	return session, nil
 }
 
-func writeSession(session whatsapp.Session) error {
-	file, err := os.Create(os.TempDir() + "/whatsappSession.gob")
+func writeSession(session whatsapp.Session, sessionID string) error {
+	file, err := os.Create(os.TempDir() + "/whatsappSession" + sessionID + ".gob")
 	if err != nil {
 		return err
 	}
