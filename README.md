@@ -1,32 +1,50 @@
 # whatsapp-cli
 
-Connect and send messages as a whatsapp client directly from command line.
+Connect and send messages as a whatsapp client directly from command line, **this is only for experimental use**.
 
-## How to works
+## Installing
 
-##### Install
+##### Install with NPM
 
 `npm i -g whats-cli`
 
-##### Get the QRCode on command line
+##### Install with SourceCode
+
+`git clone https://github.com/jsdaniell/whats-cli.git`
+
+`cd whats-cli`
+
+`go install`
 
 `whats-cli connect-qr`
 
+##### Install with release
+
+Download the release file of your system type on the [Releases Page](https://github.com/jsdaniell/whats-cli/releases).
+
+`cd {downloadedRelease}`
+
+`./whats-cli connect-qr`
+
+## Testing
+
+##### Get the QRCode on command line
+
+`whats-cli connect-qr "sessionID"`
+
 ##### Get the string of QRCode on command line
 
-`whats-cli connect`
+`whats-cli connect "sessionID"`
 
 ##### Send message
 
-`whats-cli send "number" "message"`
-
-Number have to be without +55 prefix (8599999999) DDD + Number, +55 prefix is configured by default.
+`whats-cli send "number" "message" "sessionID"`
 
 #### Dealing with bad restored sessions:
 
-Sometimes if you want to reset the stored session you can erase the `whatsappSession.gob` file.
+Sometimes if you want to reset the stored session you can erase the `whatsappSession.gob` file, what's generated locally when logging a session.
 
-`rm -rf $TMPDIR/whatsappSession.gob`
+`rm whatsappSession-{sessionID}.gob`
 
 
 
