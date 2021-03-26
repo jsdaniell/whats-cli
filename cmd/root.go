@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/jsdaniell/whats-cli/cmd/whats_connection"
-	"github.com/jsdaniell/whats-cli/cmd/whats_sender"
+	"github.com/jsdaniell/whats-cli/cmd/whats_messages"
 	"github.com/spf13/cobra"
 	"os"
 
@@ -44,13 +44,13 @@ func init() {
 	// when this action is called directly.
 	RootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 
+
 	RootCmd.AddCommand(whats_connection.WhatsConnect)
 	RootCmd.AddCommand(whats_connection.WhatsConnectQR)
-	RootCmd.AddCommand(whats_connection.WhatsReconnect)
 	RootCmd.AddCommand(whats_connection.WhatsVersion)
 	RootCmd.AddCommand(whats_connection.WhatsDisconnect)
 
-	RootCmd.AddCommand(whats_sender.WhatsSendMessage)
+	RootCmd.AddCommand(whats_messages.WhatsSendMessage)
 }
 
 // initConfig reads in config file and ENV variables if set.

@@ -1,40 +1,39 @@
-package whats_sender
+package whats_messages
 
 import (
+	"errors"
 	"fmt"
 	"github.com/Rhymen/go-whatsapp"
-	"github.com/davecgh/go-spew/spew"
 	"github.com/jsdaniell/whats-cli/utils/whats_utils"
 	"github.com/spf13/cobra"
-	"os"
 	"time"
 )
 
 // OtherCommand handles other command, customize it!.
 var WhatsSendMessage = &cobra.Command{
-	Use:   "send [number-to-send] [message-text] [sessionID]",
-	Short: "Send a whatsapp message (the prefix +55 is fixed)",
-	Args:  cobra.MinimumNArgs(2),
-	Run: func(cmd *cobra.Command, args []string) {
+	Use:   "send",
+	Short: "send [number-to-send] [message-text] [sessionID]",
+	Args:  cobra.MinimumNArgs(3),
+	RunE: func(cmd *cobra.Command, args []string) error {
+		if len(args) < 3 {
+			return errors.New("you have to inform thr arguments: send [number-to-send] [message-text] [sessionID]")
+		}
+
 		var sessionID = ""
 
 		if len(args) > 2 {
-			sessionID = args[3]
+			sessionID = args[2]
 		}
 
 		wac, err := whatsapp.NewConn(20 * time.Second)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
+			return errors.New("error creating connection: %v\n" + err.Error())
 		}
 
-		err = whats_utils.Login(wac, true, sessionID)
+		err = whats_utils.Login(wac, sessionID)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
+			return errors.New("error logging in: %v\n" + err.Error())
 		}
-
-		<-time.After(3 * time.Second)
-
-		spew.Dump(args)
 
 		msg := whatsapp.TextMessage{
 			Info: whatsapp.MessageInfo{
@@ -46,10 +45,11 @@ var WhatsSendMessage = &cobra.Command{
 
 		msgId, err := wac.Send(msg)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error sending message: %v", err)
-			os.Exit(1)
+			return errors.New("error sending message: %v" + err.Error())
 		} else {
 			fmt.Println("Message Sent -> ID : " + msgId)
 		}
+
+		return nil
 	},
 }

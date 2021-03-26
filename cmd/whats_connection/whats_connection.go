@@ -1,12 +1,12 @@
 package whats_connection
 
 import (
+	"errors"
 	"fmt"
 	"github.com/Rhymen/go-whatsapp"
 	"github.com/jsdaniell/whats-cli/utils/json_utils"
 	"github.com/jsdaniell/whats-cli/utils/whats_utils"
 	"github.com/spf13/cobra"
-	"os"
 	"time"
 )
 
@@ -14,7 +14,8 @@ import (
 var WhatsConnect = &cobra.Command{
 	Use:   "connect",
 	Short: "Connect or restore connection to whatsapp on CLI",
-	Run: func(cmd *cobra.Command, args []string) {
+	Args: cobra.MaximumNArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
 		var sessionID = ""
 
 		if len(args) > 0 {
@@ -23,23 +24,25 @@ var WhatsConnect = &cobra.Command{
 
 		wac, err := whatsapp.NewConn(20 * time.Second)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
+			return errors.New("error creating connection: %v\n" + err.Error())
 
 		}
 
-		err = whats_utils.Login(wac, true, sessionID)
+		err = whats_utils.NewLogin(wac, true, sessionID)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
-
+			return errors.New("error logging in: %v\n" + err.Error())
 		}
+
+		return nil
 	},
 }
 
 // WhatsConnectQR handles other command, customize it!.
 var WhatsConnectQR = &cobra.Command{
 	Use:   "connect-qr",
+	Args: cobra.MaximumNArgs(1),
 	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
-	Run: func(cmd *cobra.Command, args []string) {
+	RunE: func(cmd *cobra.Command, args []string) error {
 		var sessionID = ""
 
 		if len(args) > 0 {
@@ -48,15 +51,15 @@ var WhatsConnectQR = &cobra.Command{
 
 		wac, err := whatsapp.NewConn(20 * time.Second)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
-
+			return errors.New("error creating connection: %v\n" + err.Error())
 		}
 
-		err = whats_utils.Login(wac, false, sessionID)
+		err = whats_utils.NewLogin(wac, false, sessionID)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
-
+			return errors.New("error logging in: %v\n" + err.Error())
 		}
+
+		return nil
 	},
 }
 
@@ -65,48 +68,29 @@ var WhatsVersion = &cobra.Command{
 	Use:   "version",
 	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
 	Run: func(cmd *cobra.Command, args []string) {
-
 		fmt.Println(json_utils.GettingJSONVersion())
 	},
 }
 
-// WhatsConnectQR handles other command, customize it!.
-var WhatsReconnect = &cobra.Command{
-	Use:   "reconnect",
-	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
-	Run: func(cmd *cobra.Command, args []string) {
 
-		// run your different command
-		// create new WhatsApp connection
+// WhatsDisconnect handles other command, customize it!.
+var WhatsDisconnect = &cobra.Command{
+	Use:   "disconnect",
+	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
+	Args: cobra.MaximumNArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
 		var sessionID = ""
 
 		if len(args) > 0 {
 			sessionID = args[0]
 		}
 
-		wac, err := whatsapp.NewConn(20 * time.Second)
+		err := whats_utils.Disconnect(sessionID)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
+			return errors.New("error logging in: %v\n" + err.Error())
 
 		}
 
-		err = whats_utils.ReLogin(wac, true, sessionID)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
-
-		}
-	},
-}
-
-// WhatsDisconnect handles other command, customize it!.
-var WhatsDisconnect = &cobra.Command{
-	Use:   "disconnect",
-	Short: "Connect or restore connection to whatsapp on CLI showing the QRCode",
-	Run: func(cmd *cobra.Command, args []string) {
-		err := whats_utils.Disconnect()
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
-
-		}
+		return nil
 	},
 }
