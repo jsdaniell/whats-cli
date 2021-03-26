@@ -17,7 +17,6 @@ github.com/alexellis/go-execute/pkg/v1
 github.com/chzyer/readline
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
-github.com/davecgh/go-spew/spew
 # github.com/fsnotify/fsnotify v1.4.7
 github.com/fsnotify/fsnotify
 # github.com/golang/protobuf v1.3.2

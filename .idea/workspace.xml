@@ -21,12 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c7689dde-3e57-43b2-a8ac-51c4566028a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/whats_connection/whats_connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/whats_connection/whats_connection.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/whats_sender/whats_sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/whats_messages/whats_messages.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/whats_utils/whats_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/whats_utils/whats_utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whatsappSession.gob" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/bypass.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/bypasssafe.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/common.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/doc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/dump.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/format.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/davecgh/go-spew/spew/spew.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

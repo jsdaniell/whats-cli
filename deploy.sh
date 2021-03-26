@@ -3,6 +3,8 @@ echo "Type the version: "
 
 read -r version
 
+go mod vendor
+
 git add -A
 
 echo "Commit message: "
