@@ -16,7 +16,9 @@ Connect and send messages as a whatsapp client directly from command line, **thi
 
 `go install`
 
-`whats-cli connect-qr`
+`go build`
+
+`./whats-cli connect-qr`
 
 ##### Install with release
 
